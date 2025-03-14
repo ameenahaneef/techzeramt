@@ -26,9 +26,7 @@ class ColumnWidget extends StatelessWidget {
           child: Text(
             'Login',
             style: TextStyle(
-                color: kWhite,
-                fontSize: 40,
-                fontWeight: FontWeight.bold),
+                color: kWhite, fontSize: 40, fontWeight: FontWeight.bold),
           ),
         ),
         height10,
@@ -39,11 +37,9 @@ class ColumnWidget extends StatelessWidget {
               style: TextStyle(color: kWhite, fontSize: 20),
             )),
         height10,
-        Formfield(
-            labelText: 'Username', controller: usernameController),
+        Formfield(labelText: 'Username', controller: usernameController),
         const SizedBox(height: 10),
-        Formfield(
-            labelText: 'Password', controller: passwordController),
+        Formfield(labelText: 'Password', controller: passwordController),
         const SizedBox(height: 20),
         BlocBuilder<LoginBloc, LoginState>(
           builder: (context, state) {
@@ -60,7 +56,7 @@ class ColumnWidget extends StatelessWidget {
                 }
               },
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white.withOpacity(0.7)),
+                  backgroundColor: kWhite.withOpacity(0.7)),
               child: const Text(
                 'Login',
                 style: TextStyle(color: kBlack),

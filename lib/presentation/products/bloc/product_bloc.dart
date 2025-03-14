@@ -10,23 +10,22 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
   final ProductRepository productRepository = ProductRepository();
 
   ProductBloc() : super(ProductInitial()) {
-    on<AddProductEvent>((event, emit)async {
+    on<AddProductEvent>((event, emit) async {
       await productRepository.addProduct(event.product);
       List<Product> products = productRepository.getAllProducts();
       emit(ProductLoaded(products));
     });
 
-     on<LoadProductsEvent>((event, emit) {
+    on<LoadProductsEvent>((event, emit) {
       List<Product> products = productRepository.getAllProducts();
       emit(ProductLoaded(products));
     });
 
-
-on<UpdateProductEvent>((event, emit) async {
-      await productRepository.updateProduct(event.index,event.newSalesPrice,event.newQuantity);
+    on<UpdateProductEvent>((event, emit) async {
+      await productRepository.updateProduct(
+          event.index, event.newSalesPrice, event.newQuantity);
       List<Product> products = productRepository.getAllProducts();
       emit(ProductLoaded(products));
     });
-    
   }
 }

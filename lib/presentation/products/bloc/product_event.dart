@@ -10,9 +10,8 @@ class AddProductEvent extends ProductEvent {
 
 class LoadProductsEvent extends ProductEvent {}
 
-
 class UpdateProductEvent extends ProductEvent {
-  final int index; 
+  final int index;
   final double newSalesPrice;
   final int newQuantity;
 
@@ -21,4 +20,4 @@ class UpdateProductEvent extends ProductEvent {
     required this.newSalesPrice,
     required this.newQuantity,
   });
-  }
+}

@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
 
           if (state is LoginSuccess) {
             Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-              return ProductScreen();
+              return const ProductScreen();
             }));
           }
         },

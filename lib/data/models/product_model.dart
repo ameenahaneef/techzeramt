@@ -1,8 +1,8 @@
 import 'package:hive/hive.dart';
 
-part 'product_model.g.dart'; // Required for Hive adapter generation
+part 'product_model.g.dart'; 
 
-@HiveType(typeId: 1) // Assign a unique ID
+@HiveType(typeId: 1)
 class Product {
   @HiveField(0)
   final String imagePath;
@@ -23,7 +23,7 @@ class Product {
     required this.quantity,
   });
 
-   Product copyWith({
+  Product copyWith({
     int? id,
     String? itemName,
     double? salesPrice,

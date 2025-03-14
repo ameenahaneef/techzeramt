@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:techzeramt/core/constants/app_colors.dart';
 import 'package:techzeramt/presentation/login/pages/login_screen.dart';
 
 class Bottombutton extends StatelessWidget {
@@ -14,31 +15,27 @@ class Bottombutton extends StatelessWidget {
         padding: const EdgeInsets.only(left: 260.0, top: 300),
         child: ElevatedButton(
           onPressed: () {
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) {
+            Navigator.of(context)
+                .pushReplacement(MaterialPageRoute(builder: (context) {
               return const LoginScreen();
             }));
           },
           style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 30, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   bottomLeft: Radius.circular(20),
                 ),
               ),
-              backgroundColor: Colors.white.withOpacity(0.3)),
+              backgroundColor: kWhite.withOpacity(0.3)),
           child: const Text(
             'Get Started',
             style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 15),
+                color: kWhite, fontWeight: FontWeight.w700, fontSize: 15),
           ),
         ),
       ),
     );
   }
 }
-
